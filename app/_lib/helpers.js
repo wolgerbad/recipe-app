@@ -10,7 +10,7 @@ export async function getCategories() {
   return data.categories;
 }
 
-export async function searchMeals(query) {
+export async function getSearchedMeals(query) {
   const res = await fetch(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
   );
@@ -32,9 +32,11 @@ export async function getMealsByCategory(categoryName) {
 }
 
 export async function getMealById(id) {
-  const res = await fetch(`www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+  const res = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+  );
   const data = await res.json();
   if (!res.ok) throw new Error('Failed to get meal by id');
 
-  return data.meals;
+  return data.meals.at(0);
 }

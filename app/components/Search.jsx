@@ -1,7 +1,6 @@
 'use client';
 
 import { usePathname, useSearchParams } from 'next/navigation';
-import { searchAction } from '../_lib/actions';
 import { useRouter } from 'next/navigation';
 
 export default function Search() {
@@ -27,7 +26,7 @@ export default function Search() {
             name="search"
             type="text"
             placeholder="Search for recipes..."
-            className="bg-slate-300 p-2 rounded-md border-2 border-gray-400 hover:border-gray-600 focus:outline-none focus:border-gray-600 transition"
+            className="w-full bg-slate-300 p-2 rounded-md border-2 border-gray-400 hover:border-gray-600 focus:outline-none focus:border-gray-600 transition"
           />
         </form>
       </div>

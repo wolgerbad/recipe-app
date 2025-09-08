@@ -33,6 +33,9 @@ export default function RootLayout({ children }) {
           <Link href="/favorites">Favorite Meals</Link>
         </nav>
         {children}
+        <footer className="p-4 text-center text-gray-500 mt-20">
+          &copy; 2025 Recipedia. All rights reserved.
+        </footer>
       </body>
     </html>
   );
