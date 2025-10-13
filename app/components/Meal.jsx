@@ -16,7 +16,12 @@ export default function Meal({ meal, categoryName }) {
           <h2 className="text-lg font-semibold mb-2">{mealName}</h2>
         </div>
       </Link>
-      <AddToFavorites mealName={mealName} id={id} image={image} />
+      <AddToFavorites
+        mealName={mealName}
+        id={id}
+        image={image}
+        categoryName={categoryName}
+      />
     </div>
   );
 }

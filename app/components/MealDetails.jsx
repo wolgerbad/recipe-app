@@ -16,7 +16,7 @@ function MealDetails({ meal }) {
                 if (meal['strIngredient' + n])
                   return (
                     <span
-                      className="text-white bg-red-500 px-1 py-0.5 rounded-md"
+                      className="text-white bg-purple-500 px-1 py-0.5 rounded-md"
                       key={n}
                     >
                       {meal['strIngredient' + n]} - {meal['strMeasure' + n]}

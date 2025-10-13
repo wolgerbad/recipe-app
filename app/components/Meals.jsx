@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Meal from './Meal';
 
 function Meals({ meals, categoryName, main = false }) {

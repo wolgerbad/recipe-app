@@ -23,7 +23,7 @@ export default function FavoritesPage(x) {
 
   return (
     <div className="mx-auto max-w-7xl p-6 min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-extrabold text-center mb-10 text-red-700 tracking-tight drop-shadow">
+      <h1 className="text-3xl font-extrabold text-center mb-10 text-purple-700 tracking-tight drop-shadow">
         Your Favorite Meals
       </h1>
       {favorites.length > 0 ? (
@@ -33,7 +33,7 @@ export default function FavoritesPage(x) {
               key={meal.id}
               className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform"
             >
-              <Link href={`/categories/`}>
+              <Link href={`/categories/${meal.categoryName}/${meal.id}`}>
                 <img
                   src={meal.image}
                   alt={meal.name}
@@ -45,7 +45,7 @@ export default function FavoritesPage(x) {
                   {meal.mealName}
                 </h2>
                 <button
-                  className="mt-auto bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition"
+                  className="mt-auto bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded transition"
                   onClick={() => handleRemove(meal.id)}
                 >
                   Remove from Favorites
@@ -55,8 +55,7 @@ export default function FavoritesPage(x) {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center mt-20">
-          <span className="text-6xl mb-4">😢</span>
+        <div className="flex flex-col items-center mt-10">
           <p className="text-gray-600 text-lg">
             No favorites found. Go add some delicious meals!
           </p>

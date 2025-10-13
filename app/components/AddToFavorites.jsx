@@ -3,7 +3,7 @@
 import { FaHeart } from 'react-icons/fa';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 
-export default function AddToFavorites({ mealName, id, image }) {
+export default function AddToFavorites({ mealName, id, image, categoryName }) {
   function handleAddToFavorites() {
     const existingFavorites =
       JSON.parse(localStorage.getItem('favorites')) || [];
@@ -15,7 +15,10 @@ export default function AddToFavorites({ mealName, id, image }) {
 
     localStorage.setItem(
       'favorites',
-      JSON.stringify([...existingFavorites, { mealName, id, image }])
+      JSON.stringify([
+        ...existingFavorites,
+        { mealName, id, image, categoryName },
+      ])
     );
     toast.success('Meal is successfully added to favorites!');
   }
@@ -25,8 +28,8 @@ export default function AddToFavorites({ mealName, id, image }) {
         onClick={handleAddToFavorites}
         className="flex items-center gap-1 cursor-pointer absolute top-2 right-2 bg-white p-1 rounded-md text-red-700 font-semibold"
       >
-        <FaHeart className="text-white bg-red-500 p-1 text-2xl rounded-full inline" />
-        <span>Add to favorites</span>
+        <FaHeart className="text-white bg-purple-700 p-1 text-2xl rounded-full inline" />
+        <span className="text-purple-700">Add to favorites</span>
       </span>
       <ToastContainer
         position="top-center"

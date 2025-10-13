@@ -24,15 +24,21 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="p-4 flex gap-4 bg-gray-200 dark:bg-gray-800 mb-20">
-          <Link href="/" className="flex-1">
-            Recipedia
-          </Link>
-          <Link href="/">Home</Link>
-          <Link href="/categories">Categories</Link>
-          <Link href="/favorites">Favorite Meals</Link>
-        </nav>
-        {children}
+        <main className="max-w-[80rem] mx-auto">
+          <nav className="px-8 py-4 flex gap-4 bg-purple-600 text-white dark:bg-gray-800 mb-4 font-semibold">
+            <div className="flex-1">
+              <Link href="/">Recipedia</Link>
+            </div>
+
+            <Link href="/categories" className="hover:underline">
+              Categories
+            </Link>
+            <Link href="/favorites" className="hover:underline">
+              Favorite Meals
+            </Link>
+          </nav>
+          {children}
+        </main>
         <footer className="p-4 text-center text-gray-500 mt-20">
           &copy; 2025 Recipedia. All rights reserved.
         </footer>

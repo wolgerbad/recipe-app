@@ -11,9 +11,8 @@ export default async function Home({ searchParams }) {
   const meals = await getMealsByCategory('side');
 
   const searchedMeals = await getSearchedMeals(query);
-  console.log(searchedMeals);
   return (
-    <div>
+    <div className="mt-20">
       <Search />
       {query?.length > 2 ? (
         <SearchedMeals meals={searchedMeals} />
