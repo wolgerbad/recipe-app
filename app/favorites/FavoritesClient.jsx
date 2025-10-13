@@ -1,32 +1,40 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { getLocalStorageItem } from '../_lib/helpers';
 
-export default function FavoritesPage(x) {
-  console.log(x);
-  const [favorites, setFavorites] = useState(() => {
-    const items = JSON.parse(localStorage.getItem('favorites')) || [];
-    return items;
-  });
+export default function FavoritesClient() {
+  const [favorites, setFavorites] = useState([]);
+
+  const [mounted, setMounted] = useState(false);
 
   function handleRemove(id) {
     setFavorites((favs) => favs.filter((fav) => fav.id !== id));
   }
 
+  useEffect(function () {
+    const items = JSON.parse(localStorage.getItem('favorites')) || [];
+    setMounted(true);
+    if (items) setFavorites(items);
+  }, []);
+
   useEffect(
     function () {
+      if (!mounted) return;
       localStorage.setItem('favorites', JSON.stringify(favorites));
     },
-    [favorites]
+    [favorites, mounted]
   );
+  if (!mounted) return null;
 
   return (
     <div className="mx-auto max-w-7xl p-6 min-h-screen bg-gray-100">
       <h1 className="text-3xl font-extrabold text-center mb-10 text-purple-700 tracking-tight drop-shadow">
         Your Favorite Meals
       </h1>
-      {favorites.length > 0 ? (
+      {favorites?.length > 0 ? (
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {favorites.map((meal) => (
             <div
@@ -34,9 +42,11 @@ export default function FavoritesPage(x) {
               className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-transform"
             >
               <Link href={`/categories/${meal.categoryName}/${meal.id}`}>
-                <img
+                <Image
                   src={meal.image}
-                  alt={meal.name}
+                  alt={meal.mealName}
+                  width={500}
+                  height={200}
                   className="w-full h-48 object-cover"
                 />
               </Link>

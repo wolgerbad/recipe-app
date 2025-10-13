@@ -22,6 +22,7 @@ export default function AddToFavorites({ mealName, id, image, categoryName }) {
     );
     toast.success('Meal is successfully added to favorites!');
   }
+
   return (
     <span>
       <span

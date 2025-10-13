@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Category({ category }) {
@@ -6,9 +7,11 @@ export default function Category({ category }) {
       href={`/categories/${category.strCategory.toLowerCase()}`}
       className="border rounded-lg overflow-hidden"
     >
-      <img
+      <Image
         src={category.strCategoryThumb}
         alt={category.strCategory}
+        width={500}
+        height={200}
         className="w-full h-48 object-cover"
       />
       <div className="p-4">

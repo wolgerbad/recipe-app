@@ -30,10 +30,10 @@ export default function RootLayout({ children }) {
               <Link href="/">Recipedia</Link>
             </div>
 
-            <Link href="/categories" className="hover:underline">
+            <Link href="/categories" prefetch className="hover:underline">
               Categories
             </Link>
-            <Link href="/favorites" className="hover:underline">
+            <Link href="/favorites" prefetch className="hover:underline">
               Favorite Meals
             </Link>
           </nav>
