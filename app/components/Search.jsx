@@ -16,18 +16,28 @@ export default function Search() {
   }
   return (
     <div>
-      <div className="max-w-3xl mx-auto text-center flex flex-col gap-4 mb-20">
-        <h1 className="tracking-widest text-5xl font-semibold text-gray-600">
-          Welcome to Recipedia
-        </h1>
-        <p>Find your favorite recipes and learn how to make them!</p>
-        <form action={handleSearch}>
+      <div className="max-w-4xl mx-auto text-center flex flex-col gap-6 mb-16 pt-8">
+        <div className="space-y-2">
+          <h1 className="text-5xl md:text-6xl font-bold bg-orange-600 bg-clip-text text-transparent">
+            Welcome to Recipedia
+          </h1>
+          <p className="text-lg text-gray-600">
+            Discover amazing recipes around the world
+          </p>
+        </div>
+        <form action={handleSearch} className="relative">
           <input
             name="search"
             type="text"
-            placeholder="Search for recipes..."
-            className="w-full bg-slate-300 p-2 rounded-md border-2 border-gray-400 hover:border-gray-600 focus:outline-none focus:border-gray-600 transition"
+            placeholder="Search for recipes, ingredients, cuisines..."
+            className="w-full px-6 py-4 text-lg bg-white rounded-2xl border-2 border-orange-200  hover:border-orange-300 focus:outline-none  focus:border-orange-300  placeholder:text-gray-400"
           />
+          <button
+            type="submit"
+            className="absolute right-3 top-1/2 -translate-y-1/2 px-6 py-2 bg-orange-600 text-white rounded-xl font-semibold hover:scale-105 transition-all duration-200"
+          >
+            Search
+          </button>
         </form>
       </div>
     </div>

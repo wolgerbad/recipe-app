@@ -1,8 +1,5 @@
-import Image from 'next/image';
 import Search from './components/Search';
-import Categories from './components/Categories';
 import { getMealsByCategory, getSearchedMeals } from './_lib/helpers';
-import Meal from './components/Meal';
 import Meals from './components/Meals';
 import SearchedMeals from './components/SearchedMeals';
 
@@ -12,7 +9,7 @@ export default async function Home({ searchParams }) {
 
   const searchedMeals = await getSearchedMeals(query);
   return (
-    <div className="mt-20">
+    <div className="py-8">
       <Search />
       {query?.length > 2 ? (
         <SearchedMeals meals={searchedMeals} />

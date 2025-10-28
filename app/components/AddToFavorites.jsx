@@ -25,16 +25,16 @@ export default function AddToFavorites({ mealName, id, image, categoryName }) {
 
   return (
     <span>
-      <span
+      <button
         onClick={handleAddToFavorites}
-        className="flex items-center gap-1 cursor-pointer absolute top-2 right-2 bg-white p-1 rounded-md text-red-700 font-semibold"
+        className="absolute top-4 right-4 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-red-600 font-semibold hover:bg-white hover:scale-105 transition-all duration-200 group z-10"
       >
-        <FaHeart className="text-white bg-purple-700 p-1 text-2xl rounded-full inline" />
-        <span className="text-purple-700">Add to favorites</span>
-      </span>
+        <FaHeart className="text-xl group-hover:text-red-500 transition-colors" />
+        <span className="hidden md:inline">Add to favorites</span>
+      </button>
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick={false}
