@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Recipedia [![Live Demo](https://img.shields.io/badge/-Live%20Demo-green?style=flat-square)](https://recipe-app-ten-flax.vercel.app) [![Repo](https://img.shields.io/badge/-GitHub-black?style=flat-square&logo=github)](https://github.com/wolgerbad/recipe-app)
 
-## Getting Started
+Web application for discovering recipes from around the world. Users can search by ingredient or category, view detailed recipes, and save their favorites.
 
-First, run the development server:
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-0F172A?logo=tailwindcss&logoColor=06B6D4)
+![LocalStorage](https://img.shields.io/badge/LocalStorage-FFD700?logo=javascript&logoColor=black)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📖 Overview
+Recipedia allows users to explore recipes from various cuisines and categories.  
+Users can search for dishes, view step-by-step instructions, and bookmark recipes they enjoy using browser local storage for persistence.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## ✨ Features
+- 🍽️ Search recipes by keyword or category  
+- 📋 View detailed recipe information including ingredients and instructions  
+- ❤️ Add and remove recipes from personal favorites list  
+- 💾 Favorites persisted via localStorage  
+- 📱 Fully responsive design built with TailwindCSS  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧠 Technical Implementation
+Developed with **Next.js** for fast page rendering and API integration.  
+Recipe data is fetched dynamically from a public food API.  
+Favorites and user selections are persisted locally using **localStorage**, eliminating backend dependency.  
+Styling handled by **TailwindCSS** for a modern, responsive interface and deployed via **Vercel**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🧩 Getting Started
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/wolgerbad/blog
+2. Install dependencies
+   ```bash
+   npm install
+3. Run locally
+   ```bash
+   npm run dev
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌍 Live Demo
+🔗 [Visit Live Site](https://recipe-app-ten-flax.vercel.app/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## 💡 What I Learned
+- Fetching and displaying dynamic API data with Next.js  
+- Persisting client-side state using localStorage  
+- Creating a clean, intuitive search interface  
+- Structuring reusable UI components for scalability  
+
+---
+
+## 🛠️ Tech Stack
+**Frontend:** Next.js, React, TailwindCSS  
+**Data Storage:** LocalStorage  
+**Deployment:** Vercel
+
+---
+
+## 📬 Contact
+👤 **Emir Işık**  
+🌐 [Portfolio](https://emirisk.vercel.app)  
+💼 [LinkedIn](https://www.linkedin.com/in/emir-isik)  
+📧 emir.isikdev@gmail.com
